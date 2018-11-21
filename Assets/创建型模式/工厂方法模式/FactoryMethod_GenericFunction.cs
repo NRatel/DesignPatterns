@@ -12,7 +12,7 @@ namespace FactoryMethod.GenericFunction
     //可扩展新的具体产品
     //...
 
-    //抽象工厂类asz
+    //抽象工厂类
     public abstract class Creator
     {
         //定义创建对象的公共接口
