@@ -6,6 +6,6 @@ public class Test : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Prototype.Client.Main();
+        Decorator.Client.Main();
 	}
 }
