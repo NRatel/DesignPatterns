@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour {
-
-	// Use this for initialization
+public class Test : MonoBehaviour
+{
 	void Start () {
-        Decorator.Client.Main();
+        Composite.Client.Main();
 	}
 }

@@ -41,7 +41,7 @@ namespace Decorator
     //具体装饰类A
     public class ConcreteDecoratorA : Decorator
     {
-        public ConcreteDecoratorA(Component component) : base(component){ }
+        public ConcreteDecoratorA(Component component) : base(component) { }
 
         //增加其他事情
         public override void DoOtherThing()
@@ -115,7 +115,7 @@ namespace Decorator
             //------------------------------------------------------------------
             //甚至可以同方法多次装饰
             new ConcreteDecoratorA(cdA).DoSth();
-
+            new ConcreteDecoratorA(new ConcreteDecoratorA(cdA)).DoSth();
         }
     }
 }

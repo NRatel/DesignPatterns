@@ -26,8 +26,8 @@
 
         public override void Execute()
         {
-            //组织接收者的功能，实现具体命令
-            //例如这里要使用接收者的XY功能方法
+            //组织实现者的功能，实现具体命令
+            //例如这里要使用实现者的XY功能方法
             this.implementor.DoSthX();
             this.implementor.DoSthY();
         }
@@ -44,8 +44,8 @@
 
         public override void Execute()
         {
-            //组织接收者的功能，实现具体命令
-            //例如这里要使用接收者的Z功能方法
+            //组织实现者的功能，实现具体命令
+            //例如这里要使用实现者的Z功能方法
             this.implementor.DoSthZ();
         }
     }
@@ -67,7 +67,7 @@
         {
             //构造命令实现者
             Implementor implementor = new Implementor();
-            //装配具体命令, 将命令接受者与具体命令关联
+            //装配具体命令, 将命令实现者与具体命令关联
             ConcreteCommandA concreteCommandA = new ConcreteCommandA(implementor);
             ConcreteCommandB concreteCommandB = new ConcreteCommandB(implementor);
             //构造命令调用者
