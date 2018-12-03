@@ -5,6 +5,6 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 	void Start () {
-        Composite.Client.Main();
+        ChainOfResponsibility.Client.Main();
 	}
 }
