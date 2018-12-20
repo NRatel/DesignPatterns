@@ -53,7 +53,7 @@
     //命令调用者
     public class Invoker
     {
-        //组合持有命令，这里简化为参数方式传入
+        //聚合持有命令，这里简化为参数方式传入
         public void Invoke(Command command)
         {
             command.Execute();

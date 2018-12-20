@@ -5,6 +5,6 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 	void Start () {
-        Singleton.Generic.Client.Main();
+        Interpreter.Client.Main();
 	}
 }
