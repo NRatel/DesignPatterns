@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-	void Start () {
-        Visitor.Client.Main();
-	}
+    void Start()
+    {
+        Memento.Client.Main();
+    }
 }
