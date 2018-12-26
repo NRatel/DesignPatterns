@@ -6,6 +6,6 @@ public class Test : MonoBehaviour
 {
     void Start()
     {
-        Memento.Client.Main();
+        Iterator.Client.Main();
     }
 }
