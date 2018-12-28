@@ -6,6 +6,6 @@ public class Test : MonoBehaviour
 {
     void Start()
     {
-        Iterator.Client.Main();
+        Observer.Client.Main();
     }
 }

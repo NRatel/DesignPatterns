@@ -66,12 +66,12 @@ namespace Visitor
     {
         //访问元素的接口，这里可以有两种写法。 
         //这两种写法都不能解决扩展“元素”时对“访问者”的修改问题（事实上该设计模式，就是在Element稳定的基础上进行的）。
-        //推荐第二种（养成习惯，尽可能将不变部分放在抽象类中）
+        //推荐第二种（养成习惯，面向抽象编程和接口编程，尽可能将 已确定/不变 部分放在抽象类中）
 
-        //写法2、在抽象 Visitor中 定义一个唯一访问接口，然后在每个ConcreteVisitor的实现中对每个元素进行区分对待。
+        //写法1、在抽象 Visitor中 定义一个唯一访问接口，然后在每个ConcreteVisitor的实现中对每个元素进行区分对待。
         //public abstract void visitElement(Element element);
 
-        //写法1、在抽象 Visitor中 针对不同元素，定义不同的访问接口 visitElementX、visitElementY。
+        //写法2、在抽象 Visitor中 针对不同元素，定义不同的访问接口 visitElementX、visitElementY。
         public abstract void visitElementX(ElementX elementX);
         public abstract void visitElementY(ElementY elementX);
     }
