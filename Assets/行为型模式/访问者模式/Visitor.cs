@@ -5,13 +5,13 @@ namespace Visitor
     //对象结构
     public class ObjectStructure
     {
-        private ElementX elementX;
-        private ElementY elementY;
+        private ConcreteElementX elementX;
+        private ConcreteElementY elementY;
 
         public ObjectStructure()
         {
-            elementX = new ElementX();
-            elementY = new ElementY();
+            elementX = new ConcreteElementX();
+            elementY = new ConcreteElementY();
         }
 
         public void VisitElementX(Visitor visitor)
@@ -44,20 +44,20 @@ namespace Visitor
     }
 
     //具体元素X
-    public class ElementX : Element
+    public class ConcreteElementX : Element
     {
         public override void Accept(Visitor visitor)
         {
-            visitor.visitElementX(this);
+            visitor.VisitElementX(this);
         }
     }
 
     //具体元素Y
-    public class ElementY : Element
+    public class ConcreteElementY : Element
     {
         public override void Accept(Visitor visitor)
         {
-            visitor.visitElementY(this);
+            visitor.VisitElementY(this);
         }
     }
 
@@ -69,22 +69,22 @@ namespace Visitor
         //推荐第二种（养成习惯，面向抽象编程和接口编程，尽可能将 已确定/不变 部分放在抽象类中）
 
         //写法1、在抽象 Visitor中 定义一个唯一访问接口，然后在每个ConcreteVisitor的实现中对每个元素进行区分对待。
-        //public abstract void visitElement(Element element);
+        //public abstract void VisitElement(Element element);
 
-        //写法2、在抽象 Visitor中 针对不同元素，定义不同的访问接口 visitElementX、visitElementY。
-        public abstract void visitElementX(ElementX elementX);
-        public abstract void visitElementY(ElementY elementX);
+        //写法2、在抽象 Visitor中 针对不同元素，定义不同的访问接口 VisitElementX、VisitElementY。
+        public abstract void VisitElementX(ConcreteElementX element);
+        public abstract void VisitElementY(ConcreteElementY element);
     }
 
     //具体访问者A
     public class ConcreteVisitorA : Visitor
     {
-        public override void visitElementX(ElementX elementX)
+        public override void VisitElementX(ConcreteElementX element)
         {
             Debug.Log("ConcreteVisitorA 访问 ElementX");
         }
 
-        public override void visitElementY(ElementY elementX)
+        public override void VisitElementY(ConcreteElementY element)
         {
             Debug.Log("ConcreteVisitorA 访问 ElementY");
         }
@@ -93,12 +93,12 @@ namespace Visitor
     //具体访问者B
     public class ConcreteVisitorB : Visitor
     {
-        public override void visitElementX(ElementX elementX)
+        public override void VisitElementX(ConcreteElementX element)
         {
             Debug.Log("ConcreteVisitorB 访问 ElementX");
         }
 
-        public override void visitElementY(ElementY elementX)
+        public override void VisitElementY(ConcreteElementY element)
         {
             Debug.Log("ConcreteVisitorB 访问 ElementY");
         }
