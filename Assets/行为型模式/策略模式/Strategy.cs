@@ -37,16 +37,9 @@ namespace Strategy
 
         public void DoSth()
         {
-            //额外的预先操作
-            this.Before();
             //最终调用真实主题的业务方法
             this.strategy.AlgorithmInterface();
-            //额外的后续操作
-            this.After();
         }
-
-        private void Before() { }
-        private void After() { }
     }
 
     //客户

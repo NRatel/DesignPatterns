@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 消除 If Else 方式一
+/// 消除 if else 使程序优雅
 /// </summary>
 namespace ClearIfElse.Way1.Old
 {
@@ -80,7 +80,7 @@ namespace ClearIfElse.Way1.New
 
 
 /// <summary>
-/// 消除 If Else 方式二
+/// 消除 if else 使程序易于扩展
 /// </summary>
 
 //消除前
@@ -123,6 +123,38 @@ namespace ClearIfElse.Way2.Old
             executor.Execute(new B());
             executor.Execute(new C());
         }
+    }
+}
+
+//使用策略模式
+namespace ClearIfElse.Way2.Strategy
+{
+    public abstract class Parm { }
+    public class A : Parm { }
+    public class B : Parm { }
+    public class C : Parm { }
+
+    public class Executor
+    {
+        public void Execute(Parm parm)
+        {
+            
+        }
+    }
+
+    public class Client
+    {
+        static public void Main()
+        {
+            Executor executor = new Executor();
+            executor.Execute(new A());
+            executor.Execute(new B());
+            executor.Execute(new C());
+        }
+
+        private void DoSthA() { Debug.Log("做A事"); }
+        private void DoSthB() { Debug.Log("做B事"); }
+        private void DoSthC() { Debug.Log("做C事"); }
     }
 }
 
