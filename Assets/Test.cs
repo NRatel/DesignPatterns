@@ -6,6 +6,6 @@ public class Test : MonoBehaviour
 {
     void Start()
     {
-        State.Client.Main();
+        Singleton.Generic.Client.Main();
     }
 }

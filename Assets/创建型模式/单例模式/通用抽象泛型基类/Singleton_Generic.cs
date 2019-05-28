@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using UnityEngine;
 
 namespace Singleton.Generic
 {
@@ -59,15 +60,29 @@ namespace Singleton.Generic
         }
     }
 
+    //直接在客户中，使用单例工厂获取单例
+    sealed public class C
+    {
+        private C() { }
+    }
+
     public class Client
     {
         static public void Main()
         {
+            //方式一、继承的单例
             A a = A.GetInstance();
+            //方式二、内部调用静态泛型工厂
             B b = B.GetInstance();
+            //方式三、直接使用静态泛型工厂
+            C c = Singleton<C>.GetInstance();
 
             //A a2 = new A();   //无法直接构造, 达成单例目的
             //B b2 = new B();   //无法直接构造, 达成单例目的
+            //C c2 = new C();   //无法直接构造, 达成单例目的
+
+            //直观说明"继承"和"静态工厂"这两种方式最终都是一个单例。
+            Debug.Log(A.GetInstance() == Singleton<A>.GetInstance()); //返回true
         }
     }
 }
